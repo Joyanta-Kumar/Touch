@@ -1,9 +1,25 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 
 FILE* createFile(char* fileName) {
-    FILE* file = fopen(fileName, "w");
+    FILE* file;
+    
+    file = fopen(fileName, "r");
+    if (file != NULL) {
+        // File already exists.
+        return NULL;
+    }
+
+    file = fopen(fileName, "w");
+
+    if (file == NULL) {
+        // Could not create file.
+        return NULL;
+    }
     fclose(file);
+    
+    return file;
 }
 
 
