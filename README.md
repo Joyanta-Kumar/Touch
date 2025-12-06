@@ -32,3 +32,8 @@ We will see that later.
 ```sh
 touch test.txt
 ```
+
+Multiple files can be created at once  
+```sh
+touch test.txt test.c main.py
+```
